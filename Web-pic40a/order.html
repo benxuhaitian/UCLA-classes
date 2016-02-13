@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+     "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!--Link: http://www.pic.ucla.edu/~benxuhaitian/order.html-->
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<meta name="authors" content="Haitian Xu"/>
+		<meta name="description" content="Order page" />
+		<meta name="keywords" content="PIC, assignment, business, tennis, order"/>
+		<meta name="copyright" content="Copyright 2016 Haitian Xu, All Rights Reserved"/>
+
+
+		<title>Order - Ben's Tennis Workstation</title>
+
+	</head>
+
+	<body>
+		<h2>Order Form</h2>
+		<form action="" method="get">
+			<fieldset>
+				<legend>Customer Information</legend>
+				<p>
+					Name:<input type="text" name="name" value="Joe Bruin" /><br/>
+					Street:<input type="text" name="street" value=""/><br/>
+					City:<input type="text" name="city" value=""/><br/>
+					State:<input type="text" name="state" value=""/><br/>
+					Zipcode:<input type="text" name="zipcode" value=""/><br/>
+					Email:<input type="text" name="e-mail" value=""/>
+				</p>
+			</fieldset>
+			<fieldset>
+				<legend>Order Information</legend>
+				<p>
+					How did you hear about us?
+					<input type="checkbox" name="marketsource" value="email" id="email" />
+					<label for="email">E-mail</label>&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="checkbox" name="marketsource" value="television" id="tv" />
+					<label for="tv">Television</label>&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="checkbox" name="marketsource" value="socialmedia" id="socialmedia" />
+					<label for="socialmedia">Social Media</label>
+				</p>
+				<p>
+					What is your tennis rating level?
+					<a href="https://www.usta.com/Adult-Tennis/USTA-League/ntrp/">(see explaination)</a><br/>
+					<input type="radio" name="rating" value="beginner" id="beginner" />
+					<label for="beginner">1.0 - 3.0</label><br/>
+					<input type="radio" name="rating" value="intermediate" id="intermediate" />
+					<label for="intermediate">3.1 - 4.5</label><br/>
+					<input type="radio" name="rating" value="advanced" id="advanced" />
+					<label for="advanced">4.6 - 6.0</label><br/>
+					<input type="radio" name="rating" value="pro" id="pro" />
+					<label for="pro"> &gt;6.0</label>&nbsp;
+					<br/>
+				</p>
+				<p><input type="checkbox" name="emailfeed" value="feedyes" id="feedyes" /><label for="feedyes">Send me tennis news and product sales information.</label></p><br/>
+				<table border="1">
+				<caption><i>Product List</i></caption>
+				<tr>
+					<th>Product</th>
+					<th>Description</th>
+					<th>Price</th>
+					<th>Qty</th>
+				</tr>
+				<tr>
+					<td>String-Head</td>
+					<td>Synthetic Gut, power and control</td>
+					<td>$9.99</td>
+					<td><input type="text" name="numstringhead"/></td>
+				</tr>
+				<tr>
+					<td>String-Wilson</td>
+					<td>Polyolefin, good sustainability</td>
+					<td>$11.99</td>
+					<td><input type="text" name="numstringwilson"/></td>
+
+				</tr>
+				<tr>
+					<td>Racquet-Six One 95</td>
+					<td>Used by Pro Roger Federer</td>
+					<td>$179.99</td>
+					<td><input type="text" name="numrcqsixone95"/></td>
+
+				</tr>
+				<tr>
+					<td>Wristband</td>
+					<td>Thick version, good for protection</td>
+					<td>$14.99</td>
+					<td><input type="text" name="numwristband"/></td>
+
+				</tr>
+				<tr>
+					<td>Tennis Balls (3 per can)</td>
+					<td>Non pressure tennis ball, good for practice</td>
+					<td>$2.99</td>
+					<td><input type="text" name="numtennisballcan" /></td>
+
+				</tr>
+
+			</table>
+			<br/>
+			<hr />
+			<h4>Payment Information</h4>
+			Select a credit card type:
+			<select>
+				<option selected="selected">Visa</option>
+				<option>AmerExp</option>
+				<option>MasterCard</option>
+				<option>Discovery</option>
+			</select>
+			<br/>
+			Credit card number:
+			<input type="password" name="cardnumber" />
+			<br/>
+			Name on card:<input type="text" name="nameoncard" />
+			</fieldset>
+			<fieldset>
+				<input type="submit" value="Submit" />
+				<input type="reset" value="Clear" />
+
+			</fieldset>
+			
+		</form>
+		<h3>Let's Hit and Go!</h3>
+		<p><a href="mybusiness.html">About Us</a><br/>
+		<i>&copy; 2016 Ben's&reg; Tennis workstation</i></p>
+
+		<!-- Content Ends Here -->
+		<p>
+		  	<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" height="31" width="88" /></a>
+		</p>
+	</body>
+</html>
+

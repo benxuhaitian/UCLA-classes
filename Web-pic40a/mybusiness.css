@@ -1,0 +1,136 @@
+/*link: http://www.pic.ucla.edu/~benxuhaitian/mybusiness.css*/
+html,body
+{
+  margin:0;
+  padding:0;
+}
+
+body
+{
+	background-color: #ffffcc;
+}
+
+h1,h2,h3,h4,caption {color:#00583F; padding-left: 15px; margin:0;}
+p {padding-left: 15px; padding-right: 15px;}
+table, table th, table td {
+	margin: 0;
+	border: 2px solid #003300; 
+	font-family: arial, Futura, sans-serif; }
+table td{font-size: 80%}
+a:hover {color: navy;}
+
+
+div.header {
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	font-family: "Comic Sans", cursive;
+	font-size: 4em;
+	font-weight: bold;
+	height: 1.5em;
+	background-color: #00ff33;
+}
+
+p.header {margin: 0;}
+
+#main_container{
+	display: block;
+	margin-left: auto;
+    margin-right: auto;
+	padding: 0;
+	width: 780px;
+    color: #000033;
+	
+}
+
+/**/
+/* Navigation Bar Starts*/
+		 #navbar {
+            display: block;
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0;
+            height: 1.5em;
+            background-color: #00cc66;
+         }
+         #navbar li {
+            list-style: none;
+            float: left;
+         }
+         #navbar li a{
+            display: block;
+            padding: 0px 8px 0px 8px;
+            background-color: #00cc66;
+            color: #fff;
+            text-decoration: none;
+         }
+         #navbar li a:hover {text-decoration: underline; font-weight: bold;}
+         #navbar li ul{
+            display: none;
+            width: 12em;
+            background-color: #ccff99;
+         }
+         #navbar li:hover ul{
+            display: block;
+            position: absolute;
+            margin: 0;
+            padding: 0;
+         }
+         #navbar li:hover li{
+            float: none;
+         }
+         #navbar li:hover li a{
+            background-color: #ccff99;
+            border-bottom: 1px solid #fff;
+            color: #000;
+         }
+         #navbar li li a:hover {
+            background-color: #ffff66;
+         }
+/* Navigation Bar Ends*/
+
+
+#content
+{
+	margin-left:230px;
+    padding-left:15px;
+    padding-right:15px;
+    padding-bottom:20px;
+    padding-top:20px;
+}
+
+#content h3 {margin: 0; font-family: oldtown, fantasy;}
+#content img {float: right; margin-right: 5px; margin-top: 0;}
+
+#sidebar
+{
+	background-color: #ccff66;
+	float: left;
+	width:200px;
+    padding-top:0;
+    padding-right:15px;
+    padding-bottom:0;
+    padding-left:15px;
+}
+#sidebar h3 {margin:0; padding: 5px; font-family: impact, fantasy;}
+#sidebar ol li {list-style-type: lower-alpha;}
+#sidebar ul li {list-style-type: square;}
+
+#orderbutton {
+	display: block;
+	text-align: center;
+	border: 1px solid green;
+	background-color: #00ff66;
+
+}
+#orderbutton:hover { background-color: #33ff00;}
+
+#footer
+{
+	clear: both;
+	background-color: green;
+	text-align: center;
+	color: #fff;
+}

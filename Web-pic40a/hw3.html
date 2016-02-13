@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+ "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!--Link: pic.ucla.edu/~benxuhaitian/hw3.html -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+<title>JavaScript HW3</title>
+
+<script type="text/javascript">
+<!-- 
+
+//This is the function I am providing for you.  It takes as argument a string or a number and displays it in the box in the window
+
+     function display(num) {
+        var node = document.getElementById("display");  
+		node.value=num;
+     }
+
+// `Add whatever JS you want here
+	var value_cur, value_one, result_calculated, str_cur;
+	var input_seq = 1;
+	var calculate_method, cal_finish;
+	var method_on, cal_ready;
+
+	function showstatus(){
+		//values(cur,one,str,result,method_on, method) 
+		var status = value_cur+" "+value_one+" "+str_cur+" "+result_calculated+" "+ method_on+" "+ calculate_method + " " + cal_ready;
+		var node = document.getElementById("logstatus");
+		node.value = status;
+	}
+
+	function clear_cal(){
+
+	}
+
+	function clear_all(){
+		value_cur = value_one = result_calculated = 0;
+		str_cur = "";
+		method_on = false;
+		cal_ready = false;
+		cal_finish = false;
+		calculate_method = null;
+		display(value_cur);
+		showstatus();
+	}
+
+	function input_value(num) {
+		if (cal_finish && method_on == false)
+			clear_all();
+
+		if (str_cur == "" && num == ".")
+			str_cur = "0";
+
+		str_cur = str_cur+String(num);
+		value_cur = Number(str_cur)
+		display(value_cur);
+		method_on = false;
+		if (calculate_method != null)
+			cal_ready = true;
+
+		showstatus();
+	}
+
+	function input_method(method){
+		//showstatus();
+		cal_finish = false;
+		if (cal_ready){
+			calculate();
+			cal_ready = false;
+		}
+
+		calculate_method = method;
+		if (method_on)
+			{showstatus();
+				return;}
+		value_one = value_cur;
+		value_cur = 0;
+		str_cur = "";
+		method_on = true;
+		showstatus();
+		cal_ready = true;
+
+		//display(value_cur);
+	}
+
+	function calculate(){
+		if(calculate_method == "plus")
+			result_calculated = value_cur + value_one;
+		else if (calculate_method == "multiply")
+			result_calculated = value_cur * value_one;
+		else if (calculate_method == "divide")
+			result_calculated = value_one / value_cur;
+		else if (calculate_method == "minus")
+			result_calculated = value_one - value_cur;
+		else if (calculate_method == null)
+			result_calculated = "Error, no operator!";
+
+		calculate_method = null;
+		display(result_calculated);
+		value_cur = result_calculated;
+		cal_ready = false;
+		cal_finish = true;
+		
+		showstatus();
+
+	}
+
+
+
+	clear_all();
+
+
+	 
+//-->
+
+</script>
+<style type="text/css">
+			h1 {font-size: 160%;}
+			div {
+				width: 205px;
+				border: 1px solid black; background-color: #0066cc;}
+			table.buttons, tr, td, #aclear {
+				border: 2px solid navy; 
+				width: 200px;
+				}
+				
+			td input, #aclear{
+				display: block;
+				width: auto;
+				width: 100%;
+				margin-left: auto; margin-right: auto; background-color: #69f;}
+			#aclear{width: 190px; margin-left: auto;margin-right: auto;}
+			#display {
+				margin:0; padding: 0;
+				width: 200px; height: 20px;
+				background-color: navy; color: #fff;
+			}
+			input[type=button]:hover, #aclear:hover {background-color: #66cccc;}
+			#logstatus {width: 180px; margin:0; padding: 0;}
+
+
+	</style>
+
+</head>
+<body>
+<div class="calculator">
+<h1>Simple calculator</h1>
+
+<!--This is the text box where numbers will be displayed.  Call the display function to show a number here -->
+<form action="" method="get">
+<p>
+	<input type="text" id="display"/>
+</p>
+</form>
+
+<form action="" method="get">
+
+<!--Your calculator buttons go here. Note there is no submit buttons at all -->
+<table class="buttons">
+	<tr>
+		<td><input type="button" value="7" onclick="input_value(7)"/></td>
+		<td><input type="button" value="8" onclick="input_value(8)"/></td>
+		<td><input type="button" value="9" onclick="input_value(9)"/></td>
+		<td><input type="button" value="/" onclick="input_method('divide')"/></td>
+	</tr>
+	<tr>
+		<td><input type="button" value="4" onclick="input_value(4)"/></td>
+		<td><input type="button" value="5" onclick="input_value(5)"/></td>
+		<td><input type="button" value="6" onclick="input_value(6)"/></td>
+		<td><input type="button" value="*" onclick="input_method('multiply')"/></td>
+	</tr>
+	<tr>
+		<td><input type="button" value="1" onclick="input_value(1)"/></td>
+		<td><input type="button" value="2" onclick="input_value(2)"/></td>
+		<td><input type="button" value="3" onclick="input_value(3)"/></td>
+		<td><input type="button" value="-" onclick="input_method('minus')"/></td>
+	</tr>
+	<tr>
+		<td><input type="button" value="." onclick="input_value('.')"/></td>
+		<td><input type="button" value="0" onclick="input_value(0)"/></td>
+		<td><input type="button" value="=" onclick="calculate()"/></td>
+		<td><input type="button" value="+" onclick="input_method('plus')"/></td>
+	</tr>
+	<tr>
+		<td colspan="4"><input type="button" value="All Clear" class="function" id="aclear" onclick="clear_all()"/></td>
+	</tr>
+</table>
+
+<br/><input type="textarea" id="logstatus" />
+
+<!--
+-->
+
+</form>
+</div>
+<!-- W3C XHTML Validation logo-->
+<p>
+  <a href="http://validator.w3.org/check?uri=referer"><img
+     src="http://www.w3.org/Icons/valid-xhtml11"
+     alt="Valid XHTML 1.1" height="31" width="88" /></a>
+</p>
+</body>
+</html>
